@@ -1,0 +1,23 @@
+
+<div class="app p-4 imgclass container-fluid">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="text-center">
+        <app-card [user]="user" *ngIf="user; else loading"></app-card>
+        <ng-template #loading>
+          <div class="text-center">
+            <div class="spinner-border spinner-grow-mg text-primary" role="status">
+            </div>
+            <div class="text-primary">
+              Loading...
+            </div>
+          </div>
+        </ng-template>
+        <div *ngIf="user"> <button (click)="reload()" class="btn btn-danger">
+          Reload <fa-icon [icon]="faRedo"></fa-icon>
+        </button></div>
+       
+      </div>
+    </div>
+  </div>
+</div>
